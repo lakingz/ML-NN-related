@@ -3,6 +3,7 @@ import numpy as np
 def sigmoid(x):
     return 1/(1 + np.exp(-x))
 
+
 def logistic_regression(x, y, learning_rate, max_iteration):
     __, num_features = x.shape
     m = np.random.randn(1, num_features) * 0.01
@@ -15,8 +16,7 @@ def logistic_regression(x, y, learning_rate, max_iteration):
         grad_beta = np.sum((h - y), axis=0, keepdims=True) / len(y)
         m = m - grad_m * learning_rate
         beta = beta - grad_beta * learning_rate
-    for i in range(len(x)):
-        y_hat = 1 * (h > 0.5)
+    y_hat = 1 * (h > 0.5)
 
     return m, beta, loss, y_hat
 
