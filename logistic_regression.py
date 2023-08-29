@@ -34,4 +34,3 @@ import matplotlib.pyplot as plt
 plt.hist(b_hat-b)
 plt.show()
 
-
